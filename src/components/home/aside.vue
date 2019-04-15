@@ -38,6 +38,18 @@
       <i class="el-icon-setting"></i>
       <span slot="title">导航四</span>
     </el-menu-item>
+    <el-menu-item index="5">
+      <i class="el-icon-menu"></i>
+      <span slot="title">导航5</span>
+    </el-menu-item>
+    <el-menu-item index="6">
+      <i class="el-icon-document"></i>
+      <span slot="title">导航6</span>
+    </el-menu-item>
+    <el-menu-item index="7">
+      <i class="el-icon-setting"></i>
+      <span slot="title">导航7</span>
+    </el-menu-item>
   </el-menu>
 </template>
 
@@ -55,4 +67,7 @@ export default {
 </script>
 
 <style>
+.el-menu-vertical-demo {
+  width: 202px;
+}
 </style>

@@ -1,13 +1,12 @@
 <template>
   <el-container class="container">
-    <el-header height>
-      <Header></Header>
-    </el-header>
-
+    <el-aside width="202px">
+      <Aside></Aside>
+    </el-aside>
     <el-container class="container">
-      <el-aside width="202px">
-        <Aside></Aside>
-      </el-aside>
+      <el-header height>
+        <Header></Header>
+      </el-header>
       <el-main>
         <showMMD></showMMD>
         <!-- <showMd></showMd> -->
@@ -25,7 +24,7 @@ export default {
   components: {
     Header,
     Aside,
-    showMMD,
+    showMMD
     // showMd
   }
 };
@@ -36,14 +35,15 @@ export default {
   height: 100%;
 }
 
-.el-header{
+.el-header {
   background-color: #b3c0d1;
   color: #333;
   text-align: center;
-  line-height: 60px;
+  line-height: 40px;
+  padding: 0;
 }
 .el-aside {
-  background-color: #d3dce6;
+  background-color: #545c64;
   color: #333;
   text-align: center;
   line-height: 200px;
