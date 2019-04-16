@@ -5,7 +5,9 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    isCollapse: false
+    isCollapse: false,
+    //header 消息中心提示小红点
+    is_dot: false,
   },
   mutations: {
     changeCollaspe (state) {

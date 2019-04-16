@@ -6,8 +6,7 @@ import Home from './components/home/home'
 Vue.use(Router)
 
 var router = new Router({
-  routes: [
-    {
+  routes: [{
       name: 'login',
       path: '/login',
       component: Login
@@ -19,7 +18,17 @@ var router = new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './components/home/home.vue')
+      component: () => import( /* webpackChunkName: "home" */ './components/home/home.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'console',
+          component: () => import( /* webpackChunkName: "console" */ './components/home/console.vue'),
+        },{
+        path: '/homepage1',
+        name: 'homepage1',
+        component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage1.vue'),
+      }]
     },
     // {
     //   path: '/test',

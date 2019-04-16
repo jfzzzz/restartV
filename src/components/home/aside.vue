@@ -4,36 +4,33 @@
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
+    unique-opened="true"
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
     :collapse="isCollapse"
     @select="selectOnce"
+    router="true"
   >
-    <h1 v-show="!isCollapse">GoodPro</h1>
+    <h1 class="noselect" v-show="!isCollapse">GoodPro</h1>
     <!-- <el-menu-item>
       <template slot="title">
         <span>
         </span>
       </template>
     </el-menu-item>-->
-    <el-submenu index="1">
+    <el-submenu index="/">
       <template slot="title">
-        <i class="el-icon-location"></i>
-        <span>导航一</span>
+        <!-- <i class="el-icon-location"></i> -->
+        <i class="fas fa-home fa-lg"></i>
+        <span> 主 页</span>
       </template>
       <el-menu-item-group>
-        <template slot="title">分组一</template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
+        <!-- <template slot="title">分组一</template> -->
+        <el-menu-item index="/">控制台</el-menu-item>
+        <el-menu-item index="homepage1">主页一</el-menu-item>
+        <el-menu-item index="homepage2">主页二</el-menu-item>
       </el-menu-item-group>
-      <el-menu-item-group title="分组2">
-        <el-menu-item index="1-3">选项3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="1-4">
-        <template slot="title">选项4</template>
-        <el-menu-item index="1-4-1">选项1</el-menu-item>
-      </el-submenu>
     </el-submenu>
     <el-menu-item index="2">
       <i class="el-icon-menu"></i>
@@ -92,7 +89,21 @@ h1 {
   text-align: center;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+not supported by any browser */
+}
+
 /* .el-menu-vertical-demo {
   width: 202px;
 } */
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
 </style>

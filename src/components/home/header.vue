@@ -8,23 +8,27 @@
     </el-menu-item>
     <el-menu-item index="2-1" title="主页">
       <!-- <i class="el-icon-location-outline"></i> -->
-      <i class="fas fa-home"></i>
+      <!-- <i class="fas fa-home"></i> -->
+      <i class="fas fa-globe"></i>
     </el-menu-item>
-    <el-menu-item index="2-2" title="刷新"> 
+    <el-menu-item index="2-2" title="刷新">
       <i class="fas fa-redo"></i>
     </el-menu-item>
-    <el-menu-item index="2-3">
-      <el-input v-model="search" placeholder="搜索"></el-input>
+    <el-menu-item style="padding:0" index="2-3">
+      <el-input class="searchInput" v-model="search" placeholder="搜索"></el-input>
     </el-menu-item>
-    <el-menu-item index="3">
-      <a href="https://www.ele.me" target="_blank">订单管理</a>
-    </el-menu-item>
+
     <div class="_right">
-      {{isCollapse}}
-      <el-button type="primary">
+      <el-button type="text">
+        <el-badge :is-dot="is_dot" class="item">
+          <i class="el-icon-bell"></i>
+        </el-badge>
+      </el-button>
+
+      <el-button type="text">
         <i class="el-icon-setting"></i>
       </el-button>
-      <span class="el-button--primary">{{ date | dateFilter }}</span>
+      <span class="dateTimeBlock">{{ date | dateFilter }}</span>
       <!-- <span class="el-button--primary">{{ date | dateFilterSmall }}</span> -->
       <el-button type="primary" @click="handleLogout">登出</el-button>
     </div>
@@ -37,7 +41,7 @@ export default {
     return {
       date: Date.now(),
       // isCollapse: true,
-      search:''
+      search: ""
     };
   },
   mounted() {
@@ -49,6 +53,9 @@ export default {
   computed: {
     isCollapse() {
       return this.$store.state.isCollapse;
+    },
+    is_dot() {
+      return this.$store.state.is_dot;
     }
   },
   methods: {
@@ -95,8 +102,24 @@ export default {
   background-color: pink;
   color: #fff;
 } */
+.searchInput {
+  line-height: 36px
+}
 ._right {
   float: right;
+}
+._right .el-button {
+  margin: 0 15px;
+}
+.dateTimeBlock {
+  display: inline-block;
+  width: 290px;
+  height: 38px;
+  line-height: 36px;
+  border: 1px solid #fff;
+  background-color: pink;
+  color: #fff;
+  border-radius: 5px;
 }
 .el-button--primary {
   height: 40px;
@@ -108,10 +131,10 @@ export default {
   height: 40px !important;
   line-height: 40px !important;
 }
-.el-menu-demo .el-menu-item:hover {
+/* .el-menu-demo .el-menu-item:hover {
   border-top: 1px solid teal;
   color: #303133;
-}
+} */
 
 .is-active {
   /* border-top: 2px solid teal; */
