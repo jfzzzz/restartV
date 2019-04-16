@@ -11,3 +11,6 @@
 //       .loader('vue-markdown-loader/lib/markdown-compiler')
 //   },
 // }
+module.exports = {
+  publicPath:'/restartV/'
+}
