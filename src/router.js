@@ -15,17 +15,17 @@ var router = new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      // component: Home
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      // component: () => import(/* webpackChunkName: "about" */ './components/home/home.vue')
+      component: () => import(/* webpackChunkName: "about" */ './components/home/home.vue')
     },
-    {
-      path: '/test',
-      name: 'test',
-      component: r => require.ensure([], () => r(require('./assets/md/test.md')))
-    }
+    // {
+    //   path: '/test',
+    //   name: 'test',
+    //   component: r => require.ensure([], () => r(require('./assets/md/test.md')))
+    // }
   ]
 })
 // 1. 添加路由拦截器（导航钩子、守卫）

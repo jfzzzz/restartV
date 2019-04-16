@@ -7,7 +7,16 @@
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
+    :collapse="isCollapse"
+    @select="selectOnce"
   >
+    <h1 v-show="!isCollapse">GoodPro</h1>
+    <!-- <el-menu-item>
+      <template slot="title">
+        <span>
+        </span>
+      </template>
+    </el-menu-item>-->
     <el-submenu index="1">
       <template slot="title">
         <i class="el-icon-location"></i>
@@ -55,19 +64,35 @@
 
 <script>
 export default {
+  computed: {
+    isCollapse() {
+      return this.$store.state.isCollapse;
+    }
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    selectOnce(key, keyPath) {
+      if (this.isCollapse == true) {
+        this.$store.commit("changeCollaspe");
+      }
     }
   }
 };
 </script>
 
-<style>
-.el-menu-vertical-demo {
+<style scoped>
+h1 {
   width: 202px;
+  color: #fff;
+  text-align: center;
 }
+
+/* .el-menu-vertical-demo {
+  width: 202px;
+} */
 </style>

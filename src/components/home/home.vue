@@ -1,14 +1,17 @@
 <template>
   <el-container class="container">
-    <el-aside width="202px">
-      <Aside></Aside>
-    </el-aside>
+    <transition>
+      <!-- <el-aside :width="asideWidth"> -->
+        <Aside></Aside>
+      <!-- </el-aside> -->
+    </transition>
     <el-container class="container">
       <el-header height>
-        <Header></Header>
+        <Header :post="post"></Header>
+        <!-- <Header :post="post" @:closeAsid="closeAsid"></Header> -->
       </el-header>
       <el-main>
-        <showMMD></showMMD>
+        <!-- <showMMD></showMMD> -->
         <!-- <showMd></showMd> -->
       </el-main>
     </el-container>
@@ -18,15 +21,24 @@
 <script>
 import Header from "./header";
 import Aside from "./aside";
-import showMMD from "../showMD/showMMD";
+// import showMMD from "../showMD/showMMD";
 // import showMd from "../showMD/showMd";
 export default {
+  data() {
+    return {
+      post: {
+        isCollapse: true
+      }
+    };
+  },
   components: {
     Header,
-    Aside,
-    showMMD
+    Aside
+    // showMMD,
     // showMd
-  }
+  },
+  computed: {},
+  methods: {}
 };
 </script>
 
