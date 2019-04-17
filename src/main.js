@@ -35,6 +35,13 @@ import httpPlugin from '@/assets/js/http'
 Vue.use(httpPlugin)
 Vue.config.productionTip = false
 
+
+// excel导出包
+import JsonExcel from 'vue-json-excel'
+Vue.component('downloadExcel', JsonExcel)
+
+
+
 new Vue({
   router,
   store,

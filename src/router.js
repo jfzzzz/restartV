@@ -7,29 +7,33 @@ Vue.use(Router)
 
 var router = new Router({
   routes: [{
-      name: 'login',
-      path: '/login',
-      component: Login
-    },
-    {
-      path: '/',
-      name: 'home',
-      // component: Home
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import( /* webpackChunkName: "home" */ './components/home/home.vue'),
-      children: [
-        {
-          path: '/',
-          name: 'console',
-          component: () => import( /* webpackChunkName: "console" */ './components/home/console.vue'),
-        },{
+    name: 'login',
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/',
+    // name: 'home',
+    // component: Home
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import( /* webpackChunkName: "home" */ './components/home/home.vue'),
+    children: [
+      {
+        path: '/',
+        name: 'home',
+        component: () => import( /* webpackChunkName: "console" */ './components/home/console.vue'),
+      }, {
         path: '/homepage1',
         name: 'homepage1',
         component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage1.vue'),
+      }, {
+        path: '/homepage2',
+        name: 'homepage2',
+        component: () => import( /* webpackChunkName: "homepage1" */ './components/exportExcel/exportModel.vue'),
       }]
-    },
+  },
     // {
     //   path: '/test',
     //   name: 'test',

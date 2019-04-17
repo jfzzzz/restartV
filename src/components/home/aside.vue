@@ -4,13 +4,13 @@
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
-    unique-opened="true"
+    :unique-opened="unique_opened"
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
     :collapse="isCollapse"
     @select="selectOnce"
-    router="true"
+    :router="router"
   >
     <h1 class="noselect" v-show="!isCollapse">GoodPro</h1>
     <!-- <el-menu-item>
@@ -61,6 +61,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      unique_opened: false,
+      router: true
+    }
+  },
   computed: {
     isCollapse() {
       return this.$store.state.isCollapse;

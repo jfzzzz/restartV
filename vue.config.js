@@ -12,5 +12,5 @@
 //   },
 // }
 module.exports = {
-  publicPath:'/restartV/'
+  // publicPath:'/restartV/'
 }
