@@ -8,15 +8,19 @@
             <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
           </div>
           <!-- card body -->
-          <download-excel
-            class="export-excel-wrapper"
-            :data="json_data"
-            :fields="json_fields"
-            name="filename.xls"
-          >
-            <!-- 上面可以自定义自己的样式，还可以引用其他组件button -->
-            <el-button type="primary" size="small">导出EXCEL</el-button>
-          </download-excel>
+          <el-card >
+            <download-excel
+              class="export-excel-wrapper"
+              :data="json_data"
+              :fields="json_fields"
+              name="filename.xls"
+            >
+              <!-- 上面可以自定义自己的样式，还可以引用其他组件button -->
+              <el-button type="primary" size="small" @click="alert(11)">导出EXCEL</el-button>
+            </download-excel>
+          </el-card>
+          
+            
         </el-card>
       </el-col>
       <el-col :span="12">
@@ -75,23 +79,28 @@ export default {
           }
         ]
       ],
-      tableData: [{
-          propname: 'data',
-          type: 'Array',
-          discriable: '需要导出的数据，支持中文'
-        },{
-          propname: 'fields',
-          type: 'Object',
-          discriable: '定义需要导出的数据'
-        },{
-          propname: 'name',
-          type: 'string',
-          discriable: '导出EXCEL的文件名'
-        },{
-          propname: 'type',
-          type: 'string',
-          discriable: '导出EXCLE的文件类型，两种格式xls,csv,默认是xls'
-        },]
+      tableData: [
+        {
+          propname: "data",
+          type: "Array",
+          discriable: "需要导出的数据，支持中文"
+        },
+        {
+          propname: "fields",
+          type: "Object",
+          discriable: "定义需要导出的数据"
+        },
+        {
+          propname: "name",
+          type: "string",
+          discriable: "导出EXCEL的文件名"
+        },
+        {
+          propname: "type",
+          type: "string",
+          discriable: "导出EXCLE的文件类型，两种格式xls,csv,默认是xls"
+        }
+      ]
     };
   }
 };
