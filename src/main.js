@@ -11,6 +11,9 @@ import animate from 'animate.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import moment from 'moment'
 import 'moment/locale/zh-cn'
+// echarts引入
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts 
 // markdown编辑
 import mavonEditor from 'mavon-editor'
 // markdown-it对象：md.s_markdown, md => mavonEditor实例

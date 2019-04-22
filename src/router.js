@@ -1,46 +1,54 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './components/login/login'
-import Home from './components/home/home'
 
 Vue.use(Router)
 
 var router = new Router({
-  routes: [{
-    name: 'login',
-    path: '/login',
-    component: Login
-  },
-  {
-    path: '/',
-    // name: 'home',
-    // component: Home
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "home" */ './components/home/home.vue'),
-    children: [
-      {
-        path: '/',
-        name: 'home',
-        component: () => import( /* webpackChunkName: "console" */ './components/home/console.vue'),
-      }, {
-        path: '/homepage1',
-        name: 'homepage1',
-        component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage1.vue'),
-      }, {
-        path: '/homepage2',
-        name: 'homepage2',
-        component: () => import( /* webpackChunkName: "homepage1" */ './components/exportExcel/exportModel.vue'),
-      }]
-  },
-    // {
-    //   path: '/test',
-    //   name: 'test',
-    //   component: r => require.ensure([], () => r(require('./assets/md/test.md')))
-    // }
+  routes: [
+    {
+      path: '*',
+      redirect: '/404'
+    },
+    {
+      path: '/404',
+      component: () => import( /* webpackChunkName: "404" */ './components/404.vue'),
+      // component: Un404,
+    }, {
+      name: 'login',
+      path: '/login',
+      component: Login
+    },
+    {
+      path: '/',
+      // name: 'home',
+      // component: Home
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import( /* webpackChunkName: "home" */ './components/home/home.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: () => import( /* webpackChunkName: "console" */ './components/home/console.vue'),
+        }, {
+          path: '/home/homepage1',
+          name: 'homepage1',
+          component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage1.vue'),
+        }, {
+          path: '/home/homepage2',
+          name: 'homepage2',
+          component: () => import( /* webpackChunkName: "homepage1" */ './components/exportExcel/exportModel.vue'),
+        },{
+          path: '/technology',
+          name: 'technology',
+          component: () => import( /* webpackChunkName: "404" */ './components/technology/technology.vue'),
+        }]
+    }
   ]
-})
+},
+)
 // 1. 添加路由拦截器（导航钩子、守卫）
 //    接下来所有的视图导航都必须经过这道关卡
 //    一旦进入这道关卡，你得告诉路由守卫，

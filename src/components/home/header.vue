@@ -103,7 +103,7 @@ export default {
   color: #fff;
 } */
 .searchInput {
-  line-height: 36px
+  line-height: 36px;
 }
 ._right {
   float: right;
@@ -132,12 +132,17 @@ export default {
   line-height: 40px !important;
 }
 /* .el-menu-demo .el-menu-item:hover {
-  border-top: 1px solid teal;
+  border-bottom: 1px solid teal;
   color: #303133;
 } */
 
-.is-active {
-  /* border-top: 2px solid teal; */
+/* .is-active {
+  border-top: 2px solid teal;
   color: #303133;
+} */
+.is-active {
+  /* background: #a3212f; */
+  border-bottom: 0px solid transparent !important;
+  color: #ffffff;
 }
 </style>

@@ -5,9 +5,11 @@
       <el-header height>
         <Header :post="post"></Header>
       </el-header>
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+      <el-scrollbar :style="{height:'100%'}">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </el-scrollbar>
     </el-container>
   </el-container>
 </template>

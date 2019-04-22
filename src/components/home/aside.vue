@@ -1,16 +1,16 @@
 <template>
   <el-menu
-    default-active="2"
+    :default-active="$route.path"
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
-    :unique-opened="unique_opened"
+    :unique-opened="element.unique_opened"
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
     :collapse="isCollapse"
     @select="selectOnce"
-    :router="router"
+    :router="element.router"
   >
     <h1 class="noselect" v-show="!isCollapse">GoodPro</h1>
     <!-- <el-menu-item>
@@ -22,19 +22,19 @@
     <el-submenu index="/">
       <template slot="title">
         <!-- <i class="el-icon-location"></i> -->
-        <i class="fas fa-home fa-lg"></i>
-        <span> 主 页</span>
+        <i class="fas fa-home fa-lg margin_R"></i>
+        <span>主 页</span>
       </template>
       <el-menu-item-group>
         <!-- <template slot="title">分组一</template> -->
         <el-menu-item index="/">控制台</el-menu-item>
-        <el-menu-item index="homepage1">主页一</el-menu-item>
-        <el-menu-item index="homepage2">主页二</el-menu-item>
+        <el-menu-item index="/home/homepage1">主页一</el-menu-item>
+        <el-menu-item index="/home/homepage2">主页二</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
-    <el-menu-item index="2">
+    <el-menu-item index="/technology">
       <i class="el-icon-menu"></i>
-      <span slot="title">导航二</span>
+      <span slot="title">技术栈</span>
     </el-menu-item>
     <el-menu-item index="3">
       <i class="el-icon-document"></i>
@@ -61,11 +61,18 @@
 
 <script>
 export default {
+  mounted() {
+    // this.element.active = this.$route.fullPath;
+    this.element.active = this.$route.matched[0].path;
+  },
   data() {
     return {
-      unique_opened: false,
-      router: true
-    }
+      element: {
+        unique_opened: true,
+        router: true,
+        active: ''
+      }
+    };
   },
   computed: {
     isCollapse() {
@@ -93,6 +100,9 @@ h1 {
   width: 202px;
   color: #fff;
   text-align: center;
+}
+.margin_R {
+  margin: 0 10px 0 0;
 }
 
 .noselect {
