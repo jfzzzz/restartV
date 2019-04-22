@@ -20,7 +20,7 @@
                   <el-button style="float:right" type="text">全部</el-button>
                 </div>
                 <div class="block">
-                  <el-card class="_card">
+                  <el-card class="_card" shadow="never">
                     <header>
                       <i class="fas fa-tint marginLR"></i>
                       <span>流式布局（Liquid Layout）</span>
@@ -31,7 +31,7 @@
                       <span class="footer_time">7天前</span>
                     </footer>
                   </el-card>
-                  <el-card class="_card">
+                  <el-card class="_card" shadow="never">
                     <header>
                       <i class="fas fa-adjust marginLR"></i>
                       <span>自适应布局（Adaptive Layout）</span>
@@ -42,7 +42,7 @@
                       <span class="footer_time">7天前</span>
                     </footer>
                   </el-card>
-                  <el-card class="_card">
+                  <el-card class="_card" shadow="never">
                     <header>
                       <i class="fas fa-mobile-alt marginLR"></i>
                       <span>响应式布局（Responsive Layout）</span>
@@ -55,7 +55,7 @@
                   </el-card>
                 </div>
                 <div class="block">
-                  <el-card class="_card">
+                  <el-card class="_card" shadow="never">
                     <header>
                       <i class="fas fa-tint marginLR"></i>
                       <span>流式布局（Liquid Layout）</span>
@@ -66,7 +66,7 @@
                       <span class="footer_time">7天前</span>
                     </footer>
                   </el-card>
-                  <el-card class="_card">
+                  <el-card class="_card" shadow="never">
                     <header>
                       <i class="fas fa-adjust marginLR"></i>
                       <span>自适应布局（Adaptive Layout）</span>
@@ -77,7 +77,7 @@
                       <span class="footer_time">7天前</span>
                     </footer>
                   </el-card>
-                  <el-card class="_card">
+                  <el-card class="_card" shadow="never">
                     <header>
                       <i class="fas fa-mobile-alt marginLR"></i>
                       <span>响应式布局（Responsive Layout）</span>
