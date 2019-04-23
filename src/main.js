@@ -4,6 +4,7 @@ import router from './router'
 import Vuex from 'vuex'
 import store from './vuex/store'
 import './plugins/element.js'
+// 初始化样式
 import './assets/css/style.css'
 // 引入animate动画库
 import animate from 'animate.css'

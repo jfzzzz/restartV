@@ -44,6 +44,10 @@ var router = new Router({
           path: '/technology',
           name: 'technology',
           component: () => import( /* webpackChunkName: "404" */ './components/technology/technology.vue'),
+        },{
+          path: '/readme',
+          name: 'readme',
+          component: () => import( /* webpackChunkName: "404" */ './components/readme/readme.vue'),
         }]
     }
   ]

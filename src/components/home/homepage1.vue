@@ -263,6 +263,9 @@ export default {
           }
         ]
       };
+      window.addEventListener("resize", () => {
+        myChart.resize();
+      });
       myChart.setOption(option);
     }
   }
@@ -323,7 +326,7 @@ export default {
 }
 .DT_List .time {
   font-size: 12px;
-  color: #777
+  color: #777;
 }
 .DT_List .head_img {
   width: 40px;

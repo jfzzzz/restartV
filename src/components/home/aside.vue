@@ -52,9 +52,9 @@
       <i class="el-icon-document"></i>
       <span slot="title">导航6</span>
     </el-menu-item>
-    <el-menu-item index="7">
+    <el-menu-item index="/readme">
       <i class="el-icon-setting"></i>
-      <span slot="title">导航7</span>
+      <span slot="title">README</span>
     </el-menu-item>
   </el-menu>
 </template>

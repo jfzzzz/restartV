@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-html="compiledMarkdown"></div>
+    <div v-html="compiledMarkdown" class="_md_content"></div>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
       smartypants: false
     });
     this.msg = marked(this.msg);
-    this.$http.get("/test.md").then(res => {
+    this.$http.get("/README.md").then(res => {
       console.log(res.data);
       this.msg = res.data;
     });
@@ -44,4 +44,11 @@ export default {
 </script>
 
 <style>
+._md_content {
+  width: 700px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  /* background-color: #f6f6f6; */
+  padding: 20px;
+}
 </style>
