@@ -3,10 +3,22 @@ body {
   height: 100%;
 }
 
+._l {
+  float: left;
+}
+._r {
+  float: right;
+}
+.clearfix {
+  overflow: hidden;
+  clear: both;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
+
 code,
 kbd,
 pre,
@@ -14,12 +26,14 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
+
 code,
 kbd,
 pre,
 samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
 code {
   padding: 2px 4px;
   font-size: 90%;
@@ -27,6 +41,7 @@ code {
   background-color: #f9f2f4;
   border-radius: 4px;
 }
+
 pre {
   display: block;
   padding: 9.5px;
@@ -40,6 +55,7 @@ pre {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 pre code {
   padding: 0;
   font-size: inherit;
@@ -48,25 +64,29 @@ pre code {
   background-color: transparent;
   border-radius: 0;
 }
+
 pre {
   overflow: auto;
 }
-pre,
-blockquote {
+
+pre {
   border: 1px solid #999;
   page-break-inside: avoid;
 }
+
 blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
   font-size: 17.5px;
   border-left: 5px solid #eeeeee;
 }
+
 blockquote p:last-child,
 blockquote ul:last-child,
 blockquote ol:last-child {
   margin-bottom: 0;
 }
+
 blockquote footer,
 blockquote small,
 blockquote .small {
@@ -75,11 +95,13 @@ blockquote .small {
   line-height: 1.42857143;
   color: #777777;
 }
+
 blockquote footer:before,
 blockquote small:before,
 blockquote .small:before {
   content: "\2014 \00A0";
 }
+
 .blockquote-reverse,
 blockquote.pull-right {
   padding-right: 15px;
@@ -88,6 +110,7 @@ blockquote.pull-right {
   border-right: 5px solid #eeeeee;
   border-left: 0;
 }
+
 .blockquote-reverse footer:before,
 blockquote.pull-right footer:before,
 .blockquote-reverse small:before,
@@ -96,6 +119,7 @@ blockquote.pull-right small:before,
 blockquote.pull-right .small:before {
   content: "";
 }
+
 .blockquote-reverse footer:after,
 blockquote.pull-right footer:after,
 .blockquote-reverse small:after,
@@ -103,4 +127,11 @@ blockquote.pull-right small:after,
 .blockquote-reverse .small:after,
 blockquote.pull-right .small:after {
   content: "\00A0 \2014";
+}
+
+.el-card__header {
+  padding: 12px 15px;
+  border-bottom: 1px solid #EBEEF5;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }

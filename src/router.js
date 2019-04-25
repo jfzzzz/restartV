@@ -39,7 +39,7 @@ var router = new Router({
         }, {
           path: '/home/homepage2',
           name: 'homepage2',
-          component: () => import( /* webpackChunkName: "homepage1" */ './components/exportExcel/exportModel.vue'),
+          component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage2.vue'),
         },{
           path: '/technology',
           name: 'technology',
@@ -48,6 +48,10 @@ var router = new Router({
           path: '/readme',
           name: 'readme',
           component: () => import( /* webpackChunkName: "404" */ './components/readme/readme.vue'),
+        },{
+          path: '/map',
+          name: 'map',
+          component: () => import( /* webpackChunkName: "404" */ './components/map/map.vue'),
         }]
     }
   ]

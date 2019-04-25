@@ -13,13 +13,7 @@
     :router="element.router"
   >
     <h1 class="noselect" v-show="!isCollapse">GoodPro</h1>
-    <!-- <el-menu-item>
-      <template slot="title">
-        <span>
-        </span>
-      </template>
-    </el-menu-item>-->
-    <el-submenu index="/">
+    <el-submenu index="/home">
       <template slot="title">
         <!-- <i class="el-icon-location"></i> -->
         <i class="fas fa-home fa-lg margin_R"></i>
@@ -44,16 +38,45 @@
       <i class="el-icon-setting"></i>
       <span slot="title">导航四</span>
     </el-menu-item>
-    <el-menu-item index="5">
-      <i class="el-icon-menu"></i>
-      <span slot="title">导航5</span>
-    </el-menu-item>
-    <el-menu-item index="6">
-      <i class="el-icon-document"></i>
-      <span slot="title">导航6</span>
+
+   <el-submenu index="/user">
+      <template slot="title">
+        <!-- <i class="el-icon-location"></i> -->
+        <i class="fas fa-home fa-lg margin_R"></i>
+        <span>用 户</span>
+      </template>
+      <el-menu-item-group>
+        <!-- <template slot="title">分组一</template> -->
+        <el-menu-item index="/">网站用户</el-menu-item>
+        <el-menu-item index="/home/homepage1">后台管理员</el-menu-item>
+        <el-menu-item index="/home/homepage2">角色管理</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
+
+    <el-submenu index="/setting">
+      <template slot="title">
+        <i class="fas fa-cog fa-lg margin_R"></i>
+        <span slot="title">设置</span>
+      </template>
+      <el-menu-item-group>
+        <el-submenu index="1-4">
+          <template slot="title">系统设置</template>
+          <el-menu-item index="1-4-1">网站设置</el-menu-item>
+          <el-menu-item index="1-4-2">邮件服务</el-menu-item>
+        </el-submenu>
+        <el-submenu index="1-5">
+          <template slot="title">我的设置</template>
+          <el-menu-item index="1-4-3">基本资料</el-menu-item>
+          <el-menu-item index="1-4-4">修改密码</el-menu-item>
+        </el-submenu>
+      </el-menu-item-group>
+    </el-submenu>
+    <el-menu-item index="/map">
+      <i class="fas fa-map-signs fa-lg margin_R"></i>
+      <span slot="title">地图</span>
     </el-menu-item>
     <el-menu-item index="/readme">
-      <i class="el-icon-setting"></i>
+      <i class="fab fa-markdown fa-lg margin_R"></i>
       <span slot="title">README</span>
     </el-menu-item>
   </el-menu>
@@ -70,7 +93,7 @@ export default {
       element: {
         unique_opened: true,
         router: true,
-        active: ''
+        active: ""
       }
     };
   },
