@@ -4,6 +4,7 @@ import getToken  from './auth.js'
 const http = axios.create({
   // baseURL: 'http://localhost:8888/api/private/v1/'
   // baseURL: 'http://localhost:8080/static/'
+  // baseURL: '/restartV/'
 })
 
 // 我们这里使用 http 请求拦截器的目的是为了解决：每次请求需要授权的API手动在请求头中加 Token 令牌的问题

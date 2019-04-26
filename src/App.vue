@@ -5,12 +5,10 @@
 </template>
 
 <script>
-
 export default {
-  name: 'app',
-  components: {
-  }
-}
+  name: "app",
+  components: {}
+};
 </script>
 
 <style>
@@ -18,5 +16,4 @@ export default {
   height: 100%;
   overflow: hidden;
 }
-
 </style>

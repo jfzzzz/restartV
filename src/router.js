@@ -31,27 +31,31 @@ var router = new Router({
         {
           path: '/',
           name: 'home',
-          component: () => import( /* webpackChunkName: "console" */ './components/home/console.vue'),
+          component: () => import( /* webpackChunkName: "console" */ './components/home/console.vue')
         }, {
           path: '/home/homepage1',
           name: 'homepage1',
-          component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage1.vue'),
+          component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage1.vue')
         }, {
           path: '/home/homepage2',
           name: 'homepage2',
-          component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage2.vue'),
+          component: () => import( /* webpackChunkName: "homepage1" */ './components/home/homepage2.vue')
         },{
           path: '/technology',
           name: 'technology',
-          component: () => import( /* webpackChunkName: "404" */ './components/technology/technology.vue'),
+          component: () => import( /* webpackChunkName: "404" */ './components/technology/technology.vue')
         },{
           path: '/readme',
           name: 'readme',
-          component: () => import( /* webpackChunkName: "404" */ './components/readme/readme.vue'),
+          component: () => import( /* webpackChunkName: "404" */ './components/readme/readme.vue')
         },{
           path: '/map',
           name: 'map',
-          component: () => import( /* webpackChunkName: "404" */ './components/map/map.vue'),
+          component: () => import( /* webpackChunkName: "404" */ './components/map/map.vue')
+        },{
+          path: '/setting/website',
+          name: 'website',
+          component: () => import( /* webpackChunkName: "404" */ './components/setting/website.vue')
         }]
     }
   ]

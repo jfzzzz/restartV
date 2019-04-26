@@ -1,7 +1,8 @@
 # Vue
 
 > 缓慢开发ing。
->> aaa
+>> 已经挂载上线，功能依然在逐渐上线img
+>>[跳->](https://jfzzzz.github.io/restartV/index.html).
 
 ## Project setup
 ```

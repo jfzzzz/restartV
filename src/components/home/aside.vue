@@ -1,7 +1,7 @@
 <template>
   <el-menu
     :default-active="$route.path"
-    class="el-menu-vertical-demo"
+    class="el-menu-vertical-demo noselect"
     @open="handleOpen"
     @close="handleClose"
     :unique-opened="element.unique_opened"
@@ -12,7 +12,7 @@
     @select="selectOnce"
     :router="element.router"
   >
-    <h1 class="noselect" v-show="!isCollapse">GoodPro</h1>
+    <h1 v-show="!isCollapse">GoodPro</h1>
     <el-submenu index="/home">
       <template slot="title">
         <!-- <i class="el-icon-location"></i> -->
@@ -39,7 +39,7 @@
       <span slot="title">导航四</span>
     </el-menu-item>
 
-   <el-submenu index="/user">
+    <el-submenu index="/user">
       <template slot="title">
         <!-- <i class="el-icon-location"></i> -->
         <i class="fas fa-home fa-lg margin_R"></i>
@@ -47,9 +47,9 @@
       </template>
       <el-menu-item-group>
         <!-- <template slot="title">分组一</template> -->
-        <el-menu-item index="/">网站用户</el-menu-item>
-        <el-menu-item index="/home/homepage1">后台管理员</el-menu-item>
-        <el-menu-item index="/home/homepage2">角色管理</el-menu-item>
+        <el-menu-item index="/user/webuser">网站用户</el-menu-item>
+        <el-menu-item index="/user/manager">后台管理员</el-menu-item>
+        <el-menu-item index="/user/roidManager">角色管理</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
 
@@ -59,15 +59,15 @@
         <span slot="title">设 置</span>
       </template>
       <el-menu-item-group>
-        <el-submenu index="1-4">
+        <el-submenu index="/system">
           <template slot="title">系统设置</template>
-          <el-menu-item index="1-4-1">网站设置</el-menu-item>
-          <el-menu-item index="1-4-2">邮件服务</el-menu-item>
+          <el-menu-item index="/setting/website">网站设置</el-menu-item>
+          <el-menu-item index="/setting/email">邮件服务</el-menu-item>
         </el-submenu>
-        <el-submenu index="1-5">
+        <el-submenu index="/our">
           <template slot="title">我的设置</template>
-          <el-menu-item index="1-4-3">基本资料</el-menu-item>
-          <el-menu-item index="1-4-4">修改密码</el-menu-item>
+          <el-menu-item index="/setting/baseinfo">基本资料</el-menu-item>
+          <el-menu-item index="/setting/changepwd">修改密码</el-menu-item>
         </el-submenu>
       </el-menu-item-group>
     </el-submenu>
@@ -93,7 +93,8 @@ export default {
       element: {
         unique_opened: true,
         router: true,
-        active: ""
+        active: "",
+        path: this.$route.path
       }
     };
   },
