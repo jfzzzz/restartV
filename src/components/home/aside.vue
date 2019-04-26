@@ -56,7 +56,7 @@
     <el-submenu index="/setting">
       <template slot="title">
         <i class="fas fa-cog fa-lg margin_R"></i>
-        <span slot="title">设置</span>
+        <span slot="title">设 置</span>
       </template>
       <el-menu-item-group>
         <el-submenu index="1-4">
@@ -73,7 +73,7 @@
     </el-submenu>
     <el-menu-item index="/map">
       <i class="fas fa-map-signs fa-lg margin_R"></i>
-      <span slot="title">地图</span>
+      <span slot="title">地 图</span>
     </el-menu-item>
     <el-menu-item index="/readme">
       <i class="fab fa-markdown fa-lg margin_R"></i>

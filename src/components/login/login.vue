@@ -31,33 +31,34 @@ export default {
 
   methods: {
     async login() {
-      // 1. 采集表单数据
-      // 2. 表单验证
-      // 3. 发请求执行登陆操作
-      // 4. 根据响应做交互
-      const res = await this.$http.post("/login", this.form);
-      const data = res.data;
-      // console.log(data)
-      if (data.meta.status === 200) {
-        // 登陆成功，将服务器签发给用户的 Token 身份令牌记录到 localStorage 中
-        // 其它需要使用 Token 的都去本地存储获取
-        window.localStorage.setItem("admin-token", JSON.stringify(data.data));
-        this.$message.success("登录成功鸭！");
-        setTimeout(() => {
-          this.$router.push({
-            name: "home"
-          });
-        }, 1000);
-      } else {
-        this.$message.error("账号或者密码错误鸭");
-        this.$refs.card.classList.add("animated", "shake");
-        // console.log(this.$refs.card.classList);
-        setTimeout(() => {
-          this.$refs.card.classList.remove("shake");
-        }, 1000);
-        // this.$refs.card.classList.remove("shake");
-        // console.log(this.$refs.card.classList);
-      }
+      this.$router.push('/');
+      // // 1. 采集表单数据
+      // // 2. 表单验证
+      // // 3. 发请求执行登陆操作
+      // // 4. 根据响应做交互
+      // const res = await this.$http.post("/login", this.form);
+      // const data = res.data;
+      // // console.log(data)
+      // if (data.meta.status === 200) {
+      //   // 登陆成功，将服务器签发给用户的 Token 身份令牌记录到 localStorage 中
+      //   // 其它需要使用 Token 的都去本地存储获取
+      //   window.localStorage.setItem("admin-token", JSON.stringify(data.data));
+      //   this.$message.success("登录成功鸭！");
+      //   setTimeout(() => {
+      //     this.$router.push({
+      //       name: "home"
+      //     });
+      //   }, 1000);
+      // } else {
+      //   this.$message.error("账号或者密码错误鸭");
+      //   this.$refs.card.classList.add("animated", "shake");
+      //   // console.log(this.$refs.card.classList);
+      //   setTimeout(() => {
+      //     this.$refs.card.classList.remove("shake");
+      //   }, 1000);
+      //   // this.$refs.card.classList.remove("shake");
+      //   // console.log(this.$refs.card.classList);
+      // }
     }
   }
 };

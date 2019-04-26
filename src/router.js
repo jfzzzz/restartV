@@ -63,29 +63,29 @@ var router = new Router({
 //    to 我要去哪里
 //    from 我从哪儿来的
 //    next 用来放行的
-router.beforeEach((to, from, next) => {
-  // 1. 添加全局路由导航守卫
-  // 2.
-  // 拿到当前请求的视图路径标识
-  // 2.1 如果是登陆组件，则直接放行通过
-  // 2.2 如果是非登陆组件，则检查 Token 令牌
-  //    2.2.1 有令牌就过去
-  //    2.2.2 无令牌，则让其登陆去
-  if (to.name === 'login') {
-    // 2.1 如果是访问登陆组件，则让其通过
-    next()
-  } else {
-    // 检查登陆状态令牌
-    const token = window.localStorage.getItem('admin-token')
-    if (!token) {
-      // 2.2.1 无令牌，则让其登陆去
-      next({
-        name: 'login'
-      })
-    } else {
-      // 2.2.2 有令牌就允许通过
-      next()
-    }
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   // 1. 添加全局路由导航守卫
+//   // 2.
+//   // 拿到当前请求的视图路径标识
+//   // 2.1 如果是登陆组件，则直接放行通过
+//   // 2.2 如果是非登陆组件，则检查 Token 令牌
+//   //    2.2.1 有令牌就过去
+//   //    2.2.2 无令牌，则让其登陆去
+//   if (to.name === 'login') {
+//     // 2.1 如果是访问登陆组件，则让其通过
+//     next()
+//   } else {
+//     // 检查登陆状态令牌
+//     const token = window.localStorage.getItem('admin-token')
+//     if (!token) {
+//       // 2.2.1 无令牌，则让其登陆去
+//       next({
+//         name: 'login'
+//       })
+//     } else {
+//       // 2.2.2 有令牌就允许通过
+//       next()
+//     }
+//   }
+// })
 export default router
