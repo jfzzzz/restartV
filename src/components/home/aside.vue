@@ -47,7 +47,7 @@
       </template>
       <el-menu-item-group>
         <!-- <template slot="title">分组一</template> -->
-        <el-menu-item index="/user/webuser">网站用户</el-menu-item>
+        <el-menu-item index="/user/userlist">网站用户</el-menu-item>
         <el-menu-item index="/user/manager">后台管理员</el-menu-item>
         <el-menu-item index="/user/roidManager">角色管理</el-menu-item>
       </el-menu-item-group>
@@ -66,7 +66,7 @@
         </el-submenu>
         <el-submenu index="/our">
           <template slot="title">我的设置</template>
-          <el-menu-item index="/setting/baseinfo">基本资料</el-menu-item>
+          <el-menu-item index="/setting/userinfo">基本资料</el-menu-item>
           <el-menu-item index="/setting/changepwd">修改密码</el-menu-item>
         </el-submenu>
       </el-menu-item-group>
@@ -93,8 +93,7 @@ export default {
       element: {
         unique_opened: true,
         router: true,
-        active: "",
-        path: this.$route.path
+        active: ""
       }
     };
   },
@@ -105,10 +104,10 @@ export default {
   },
   methods: {
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     selectOnce(key, keyPath) {
       if (this.isCollapse == true) {
@@ -139,9 +138,12 @@ h1 {
 not supported by any browser */
 }
 
-/* .el-menu-vertical-demo {
-  width: 202px;
-} */
+.el-menu-vertical-demo {
+  /* overflow-x: hidden; */
+  overflow-y: scroll;
+  height: 100%;
+  /* width: 100%; */
+}
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;

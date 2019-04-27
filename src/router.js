@@ -45,6 +45,10 @@ var router = new Router({
           name: 'technology',
           component: () => import( /* webpackChunkName: "404" */ './components/technology/technology.vue')
         },{
+          path: '/user/userlist',
+          name: 'userlist',
+          component: () => import( /* webpackChunkName: "404" */ './components/user/userlist.vue')
+        },{
           path: '/readme',
           name: 'readme',
           component: () => import( /* webpackChunkName: "404" */ './components/readme/readme.vue')
@@ -56,6 +60,18 @@ var router = new Router({
           path: '/setting/website',
           name: 'website',
           component: () => import( /* webpackChunkName: "404" */ './components/setting/website.vue')
+        },{
+          path: '/setting/email',
+          name: 'email',
+          component: () => import( /* webpackChunkName: "404" */ './components/setting/email.vue')
+        },{
+          path: '/setting/userinfo',
+          name: 'userinfo',
+          component: () => import( /* webpackChunkName: "404" */ './components/setting/userinfo.vue')
+        },{
+          path: '/setting/changepwd',
+          name: 'changepwd',
+          component: () => import( /* webpackChunkName: "404" */ './components/setting/changepwd.vue')
         }]
     }
   ]

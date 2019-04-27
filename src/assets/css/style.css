@@ -218,3 +218,8 @@ blockquote.pull-right .small:after {
 .markdown-body h3 {
   font-size: 1.25em;
 }
+
+/* 弹出框宽度 */
+.el-dialog {
+  width: 35%;
+}

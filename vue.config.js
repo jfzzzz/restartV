@@ -12,5 +12,17 @@
 //   },
 // }
 module.exports = {
-  // publicPath:'/restartV/'
+  // publicPath:'/restartV/',
+  // devServer: {
+  //   contentBase: __dirname + "/",
+  //   proxy: {
+  //     "/users": {
+  //       //需要代理的路径
+  //       // target: "http://jsonplaceholder.typicode.com",
+  //       target: "https://jsonplaceholder.typicode.com/",
+  //       //需要代理的域名
+  //       changeOrigin:true//必须配置为true，才能正确代理
+  //     }
+  //   }
+  // }
 }

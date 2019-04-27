@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <!-- <div> -->
     <div v-html="compiledMarkdown" class="_md_content markdown-body"></div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -50,5 +50,6 @@ export default {
   border-radius: 20px;
   /* background-color: #f6f6f6; */
   padding: 20px;
+  height: 100%;
 }
 </style>

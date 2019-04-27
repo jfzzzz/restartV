@@ -5,7 +5,7 @@
       <el-header height>
         <Header :post="post"></Header>
       </el-header>
-      <el-scrollbar :style="{height:'100%'}">
+      <el-scrollbar :style="{height:'95%'}">
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
@@ -37,8 +37,9 @@ export default {
 <style scoped>
 .container {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
 }
-
 .el-header {
   background-color: #b3c0d1;
   color: #333;
@@ -58,7 +59,6 @@ body > .el-container {
 .aside {
   background-color: #d3dce6;
 }
-
 .main {
   background-color: #e9eef3;
   height: 100%;
