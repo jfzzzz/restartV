@@ -1,0 +1,116 @@
+{
+  "status": "200",
+  "count": 50,
+  "data": [
+    {
+      "id": 1001,
+      "username": "amdin",
+      "phoneNum": "111111111",
+      "email": "123@163.com",
+      "roidid":"0",
+      "sex": "1",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 1
+    },
+    {
+      "id": 1002,
+      "username": "用户名-2",
+      "phoneNum": "222222222",
+      "email": "123@163.com",
+      "roidid":"5",
+      "sex": "1",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    },
+    {
+      "id": 1003,
+      "username": "用户名-3",
+      "phoneNum": "333333333",
+      "email": "123@163.com",
+      "sex": "1",
+      "roidid":"5",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    },
+    {
+      "id": 1004,
+      "username": "用户名-4",
+      "phoneNum": "444444444",
+      "email": "123@163.com",
+      "sex": "1",
+      "roidid":"6",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    },
+    {
+      "id": 1005,
+      "username": "用户名-5",
+      "phoneNum": "555555555",
+      "email": "123@163.com",
+      "sex": "0",
+      "roidid":"2",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    },
+    {
+      "id": 1006,
+      "username": "用户名-6",
+      "phoneNum": "666666666",
+      "email": "123@163.com",
+      "sex": "1",
+      "roidid":"4",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    },
+    {
+      "id": 1007,
+      "username": "用户名-7",
+      "phoneNum": "777777777",
+      "email": "123@163.com",
+      "sex": "0",
+      "roidid":"4",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    },
+    {
+      "id": 1008,
+      "username": "用户名-8",
+      "phoneNum": "888888888",
+      "email": "123@163.com",
+      "sex": "0",
+      "roidid":"2",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    },
+    {
+      "id": 1009,
+      "username": "用户名-9",
+      "phoneNum": "999999999",
+      "email": "123@163.com",
+      "sex": "0",
+      "roidid":"4",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    },
+    {
+      "id": 1010,
+      "username": "editor",
+      "phoneNum": "1000000000",
+      "email": "123@163.com",
+      "sex": "1",
+      "roidid":"6",
+      "ip": "10.41.213.115",
+      "joindate": "2017-01-02",
+      "status": 0
+    }
+  ]
+}

@@ -30,15 +30,40 @@
       <i class="el-icon-menu"></i>
       <span slot="title">技术栈</span>
     </el-menu-item>
-    <el-menu-item index="3">
-      <i class="el-icon-document"></i>
-      <span slot="title">导航三</span>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <i class="el-icon-setting"></i>
-      <span slot="title">导航四</span>
-    </el-menu-item>
-
+    <el-submenu index="/app">
+      <template slot="title">
+        <i class="fas fa-cog fa-lg margin_R"></i>
+        <span slot="title">应 用（待开发）</span>
+      </template>
+      <el-menu-item-group>
+        <el-submenu index="/system">
+          <template slot="title">内容系统</template>
+          <el-menu-item index="/setting/website">文章列表</el-menu-item>
+          <el-menu-item index="/setting/email">分类管理</el-menu-item>
+          <el-menu-item index="/setting/email1">评论管理</el-menu-item>
+        </el-submenu>
+        <el-submenu index="/our">
+          <template slot="title">社区系统</template>
+          <el-menu-item index="/setting/userinfo">帖子列表</el-menu-item>
+          <el-menu-item index="/setting/changepwd">回帖列表</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="/setting/userinfo">消息中心</el-menu-item>
+        <el-menu-item index="/setting/changepwd">工单系统</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
+    <el-submenu index="/pro">
+      <template slot="title">
+        <!-- <i class="el-icon-location"></i> -->
+        <i class="fas fa-home fa-lg margin_R"></i>
+        <span>高 级（待开发）</span>
+      </template>
+      <el-menu-item-group>
+        <!-- <template slot="title">分组一</template> -->
+        <el-menu-item index="/pro/userlist">集成组件</el-menu-item>
+        <el-menu-item index="/pro/administrators">后台管理员</el-menu-item>
+        <el-menu-item index="/pro/roidManager">角色管理</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
     <el-submenu index="/user">
       <template slot="title">
         <!-- <i class="el-icon-location"></i> -->
@@ -48,7 +73,7 @@
       <el-menu-item-group>
         <!-- <template slot="title">分组一</template> -->
         <el-menu-item index="/user/userlist">网站用户</el-menu-item>
-        <el-menu-item index="/user/manager">后台管理员</el-menu-item>
+        <el-menu-item index="/user/administrators">后台管理员</el-menu-item>
         <el-menu-item index="/user/roidManager">角色管理</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
@@ -140,7 +165,7 @@ not supported by any browser */
 
 .el-menu-vertical-demo {
   /* overflow-x: hidden; */
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   height: 100%;
   /* width: 100%; */
 }

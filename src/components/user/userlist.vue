@@ -40,18 +40,45 @@
           <el-button type="primary" @click="handleDel">删除</el-button>
           <el-table
             ref="multipleTable"
+            :border="true"
             :data="tableData"
             tooltip-effect="dark"
             style="width: 100%"
+            resizable
+            stripe
             @selection-change="handleSelectionChange"
           >
             <el-table-column type="selection" width="55"></el-table-column>
-            <el-table-column label="日期" width="120">
-              <template slot-scope="scope">{{ scope.row.date }}</template>
+            <el-table-column prop="id" label="ID" width="55"></el-table-column>
+            <el-table-column prop="username" label="用户名" width="200"></el-table-column>
+            <el-table-column prop="phoneNum" label="手机号" width="200"></el-table-column>
+            <el-table-column prop="email" label="邮箱" width="200"></el-table-column>
+            <el-table-column label="性别" width="80">
+              <template slot-scope="scope">{{ scope.row.sex ==1?'男':'女' }}</template>
             </el-table-column>
-            <el-table-column prop="branch" label="姓名" width="120"></el-table-column>
-            <el-table-column prop="title" label="地址" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="ip" label="IP" width="200"></el-table-column>
+            <el-table-column prop="joindate" label="加入时间" show-overflow-tooltip></el-table-column>
+            <el-table-column label="操作">
+              <template slot-scope="scope">
+                <el-button
+                  size="mini"
+                  type="primary"
+                  @click="handleEdit(scope.$index, scope.row)"
+                >编辑</el-button>
+                <el-button
+                  size="mini"
+                  type="danger"
+                  @click="handleDelete(scope.$index, scope.row)"
+                >删除</el-button>
+              </template>
+            </el-table-column>
           </el-table>
+          <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="pageInfo.count"
+            @current-change="changePage"
+          ></el-pagination>
         </div>
       </el-card>
     </div>
@@ -67,17 +94,7 @@
           <el-input v-model="userinfo.email" autocomplete="off" style="width:60%"></el-input>
         </el-form-item>
         <el-form-item label="头像" :label-width="formLabelWidth">
-          <el-input v-model="userinfo.pic" autocomplete="off" style="width:60%"></el-input>
-          <el-upload
-            class="avatar-uploader"
-            action="https://jsonplaceholder.typicode.com/posts/"
-            :show-file-list="false"
-            :on-success="handleAvatarSuccess"
-            :before-upload="beforeAvatarUpload"
-          >
-            <img v-if="imageUrl" :src="imageUrl" class="avatar">
-            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-          </el-upload>
+          <el-input v-model="userinfo.pic" style="width:60%"></el-input>
         </el-form-item>
         <el-form-item label="选择性别" :label-width="formLabelWidth">
           <el-radio-group v-model="userinfo.sax">
@@ -91,19 +108,48 @@
         <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
       </div>
     </el-dialog>
+    <el-dialog title="编辑用户" :visible.sync="dialogEidtVisible">
+      <el-form :model="editUserInfo" class="dialogForm">
+        <el-form-item label="用户名" :label-width="formLabelWidth">
+          <el-input v-model="editUserInfo.username" autocomplete="off" style="width:60%"></el-input>
+        </el-form-item>
+        <el-form-item label="手机号码" :label-width="formLabelWidth">
+          <el-input v-model="editUserInfo.phoneNum" autocomplete="off" style="width:60%"></el-input>
+        </el-form-item>
+        <el-form-item label="邮箱" :label-width="formLabelWidth">
+          <el-input v-model="editUserInfo.email" autocomplete="off" style="width:60%"></el-input>
+        </el-form-item>
+        <el-form-item label="头像" :label-width="formLabelWidth">
+          <el-input v-model="editUserInfo.pic" style="width:60%"></el-input>
+        </el-form-item>
+        <el-form-item label="选择性别" :label-width="formLabelWidth">
+          <el-radio-group v-model="editUserInfo.sex">
+            <el-radio label="1">男</el-radio>
+            <el-radio label="0">女</el-radio>
+          </el-radio-group>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogEidtVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogEidtVisible = false">确 定</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 export default {
   created() {
-    this.$http.get("/home/console/postList.json").then(res => {
+    this.$http.get("/user/userlist.json").then(res => {
       this.tableData = res.data.data;
+      this.pageInfo.count = res.data.count;
+      // console.log(res.data.count)
     });
   },
   data() {
     return {
       dialogFormVisible: false,
+      dialogEidtVisible: false,
       formLabelWidth: "120px",
       userinfo: {
         username: "",
@@ -119,8 +165,20 @@ export default {
         sex: "-1"
       },
       tableData: [],
+      // 复选框 存储
       multipleSelection: [],
-      imageUrl: ""
+      editUserInfo: {
+        username: "",
+        phoneNum: "",
+        email: "",
+        pic: "",
+        sax: ""
+      },
+      pageInfo: {
+        count: 0,
+        limit: "",
+        index: ""
+      }
     };
   },
   methods: {
@@ -131,23 +189,25 @@ export default {
       this.multipleSelection = val;
     },
     handleAdd() {
+      for (const i in this.userinfo) {
+        if (this.userinfo.hasOwnProperty(i)) {
+          this.userinfo[i] = "";
+        }
+      }
       this.dialogFormVisible = true;
     },
     handleDel() {},
-    handleAvatarSuccess(res, file) {
-      this.imageUrl = URL.createObjectURL(file.raw);
-    },
-    beforeAvatarUpload(file) {
-      const isJPG = file.type === "image/jpeg";
-      const isLt2M = file.size / 1024 / 1024 < 2;
+    handleEdit(index, row) {
+      // this.$message(scopeRow);
+      this.dialogEidtVisible = true;
+      // this.editUserInfo = scopeRow;
+      this.editUserInfo = Object.assign({}, row);
 
-      if (!isJPG) {
-        this.$message.error("上传头像图片只能是 JPG 格式!");
-      }
-      if (!isLt2M) {
-        this.$message.error("上传头像图片大小不能超过 2MB!");
-      }
-      return isJPG && isLt2M;
+    },
+    handleDelete() {},
+    changePage(index) {
+      console.log(index);
+      this.pageInfo.index = index;
     }
   }
 };
@@ -179,28 +239,5 @@ export default {
 }
 .dialogForm .el-form-item {
   margin-bottom: 22px;
-}
-.avatar-uploader .el-upload {
-  border: 1px dashed #d9d9d9;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-.avatar-uploader .el-upload:hover {
-  border-color: #409eff;
-}
-.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
-  width: 178px;
-  height: 178px;
-  line-height: 178px;
-  text-align: center;
-}
-.avatar {
-  width: 178px;
-  height: 178px;
-  display: block;
 }
 </style>

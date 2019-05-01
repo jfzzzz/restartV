@@ -113,9 +113,9 @@ export default {
 }
 .dateTimeBlock {
   display: inline-block;
-  width: 290px;
-  height: 38px;
-  line-height: 36px;
+  width: 330px;
+  height: 35px;
+  line-height: 35px;
   border: 1px solid #fff;
   background-color: pink;
   color: #fff;

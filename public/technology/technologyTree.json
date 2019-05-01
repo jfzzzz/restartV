@@ -1,0 +1,299 @@
+{
+  "data": [
+    {
+      "label": "框架",
+      "children": [
+        {
+          "label": "vue",
+          "children": [
+            {
+              "label": "webpack-loader",
+              "children": [
+                {
+                  "label": "vue-markedown-loader配置",
+                  "id": "vue-markedown"
+                }
+              ]
+            },
+            {
+              "label": "vue基础",
+              "children": [
+                {
+                  "label": "vue",
+                  "id": "technologyMd/vue/vue/vue"
+                },
+                {
+                  "label": "vue-指令，生命周期",
+                  "id": "technologyMd/vue/vue/vue2"
+                },
+                {
+                  "label": "vue-promise",
+                  "id": "technologyMd/vue/vue/vue3"
+                },
+                {
+                  "label": "vue-webpack",
+                  "id": "technologyMd/vue/vue/vue4"
+                },
+                {
+                  "label": "vue-模块化",
+                  "id": "technologyMd/vue/vue/vue5"
+                },
+                {
+                  "label": "vue-spa",
+                  "id": "technologyMd/vue/vue/vue6"
+                },
+                {
+                  "label": "vue-插槽",
+                  "id": "technologyMd/vue/vue/vue7"
+                }
+              ]
+            },
+            {
+              "label": "vue-SPA",
+              "children": [
+                {
+                  "label": "vue-SPA应用",
+                  "id": "technologyMd/vue/vue"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "NodeJS",
+      "children": [
+        {
+          "label": "node基础",
+          "children": [
+            {
+              "label": "node基础",
+              "id": "technologyMd/node/node基础"
+            },
+            {
+              "label": "http-server",
+              "id": "technologyMd/node/http-server"
+            },
+            {
+              "label": "异步编程",
+              "id": "technologyMd/node/异步编程"
+            },
+            {
+              "label": "node项目总细",
+              "id": "technologyMd/node/node项目总细"
+            }
+          ]
+        },
+        {
+          "label": "express框架",
+          "children": [
+            {
+              "label": "express",
+              "id": "technologyMd/node/express"
+            },
+            {
+              "label": "mongoDB",
+              "id": "technologyMd/node/mongoDB数据库"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "HTTP协议",
+      "children": [
+        {
+          "label": "http",
+          "id": "technologyMd/HTTP协议/http"
+        }
+      ]
+    },
+    {
+      "label": "JQuery",
+      "children": [
+        {
+          "label": "JQuery基础",
+          "id": "technologyMd/jQuery/jQuery"
+        }
+      ]
+    },
+    {
+      "label": "AJAX",
+      "children": [
+        {
+          "label": "AJAX基础",
+          "id": "technologyMd/Ajax/Ajax"
+        },
+        {
+          "label": "XHR2",
+          "id": "technologyMd/Ajax/XHR2"
+        }
+      ]
+    },
+    {
+      "label": "前端模块化",
+      "children": [
+        {
+          "label": "AMD",
+          "id": "technologyMd/前端模块化/AMD"
+        }
+      ]
+    },
+    {
+      "label": "布局",
+      "children": [
+        {
+          "label": "flex(弹性盒)布局",
+          "children": [
+            {
+              "label": "flex(弹性盒)布局",
+              "id": "technologyMd/布局/flex(弹性盒)布局/flex(弹性盒)布局"
+            }
+          ]
+        },
+        {
+          "label": "局部布局",
+          "id": "technologyMd/布局/局部布局"
+        },
+        {
+          "label": "总体布局",
+          "id": "technologyMd/布局/总体布局"
+        }
+      ]
+    },
+    {
+      "label": "html",
+      "children": [
+        {
+          "label": "html",
+          "id": "technologyMd/html/html"
+        },
+        {
+          "label": "html5",
+          "id": "technologyMd/html/html5"
+        }
+      ]
+    },
+    {
+      "label": "CSS",
+      "children": [
+        {
+          "label": "CSS",
+          "id": "technologyMd/css/css"
+        },
+        {
+          "label": "CSS3",
+          "id": "technologyMd/css/css3"
+        }
+      ]
+    },
+    {
+      "label": "javascript",
+      "children": [
+        {
+          "label": "基础知识",
+          "children": [
+            {
+              "label": "js历史",
+              "id": "technologyMd/javascript/js基础知识总结/JavaScript基础-01"
+            },
+            {
+              "label": "js运算符",
+              "id": "technologyMd/javascript/js基础知识总结/JavaScript基础-02"
+            },
+            {
+              "label": "js数组函数",
+              "id": "technologyMd/javascript/js基础知识总结/JavaScript基础-03"
+            },
+            {
+              "label": "js作用域变量",
+              "id": "technologyMd/javascript/js基础知识总结/JavaScript基础-04"
+            },
+            {
+              "label": "js内置对象",
+              "id": "technologyMd/javascript/js基础知识总结/JavaScript基础-05"
+            },
+            {
+              "label": "js引用变量",
+              "id": "technologyMd/javascript/js基础知识总结/JavaScript基础-06"
+            }
+          ]
+        },
+        {
+          "label": "浏览器对象",
+          "children": [
+            {
+              "label": "BOM对象",
+              "id": "technologyMd/javascript/BOM"
+            },
+            {
+              "label": "DOM对象",
+              "id": "technologyMd/javascript/DOM"
+            }
+          ]
+        },
+        {
+          "label": "语法",
+          "children": [
+            {
+              "label": "ECMAScript",
+              "id":"technologyMd/javascript/ECMAscript"
+            },
+            {
+              "label":"ES6",
+              "id":"technologyMd/javascript/ES6"
+            }
+          ]
+        },
+        {
+          "label":"深入JS",
+          "id":"technologyMd/javascript/深度问题"
+        }
+      ]
+    },
+    {
+      "label": "移动端",
+      "children": [
+        {
+          "label": "移动端",
+          "id":"technologyMd/移动端/移动端"
+        },
+        {
+          "label": "bootstrap",
+          "id":"technologyMd/移动端/bootstrap"
+        },
+        {
+          "label":"LESS",
+          "id":"technologyMd/移动端/LESS"
+        }
+      ]
+    },
+    {
+      "label": "MySQL",
+      "children": [
+        {
+          "label": "MySQL",
+          "id":"technologyMd/MySQL/MySQL"
+        }
+      ]
+    },
+    {
+      "label":"服务器相关",
+      "children":[
+        {
+          "label": "cookie和session",
+          "id":"technologyMd/server/cookie和session"
+        },
+        {
+          "label":"web服务端",
+          "id":"technologyMd/server/服务器端相关知识"
+        }
+      ]
+    }
+  ],
+  "defaultProps": {
+    "children": "children",
+    "label": "label"
+  }
+}
