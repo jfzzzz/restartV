@@ -219,7 +219,7 @@
                 ></el-pagination>
               </el-tab-pane>
               <el-tab-pane label="配置管理" name="second">
-                <div v-html="compiledMarkdown"></div>
+                <div v-html="compiledMarkdown" class="markdown-body"></div>
               </el-tab-pane>
               <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
               <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
@@ -291,7 +291,7 @@ export default {
       smartypants: false
     });
     this.msg = marked(this.msg);
-    this.$http.get("/test.md").then(res => {
+    this.$http.get("/README.md").then(res => {
       this.msg = res.data;
     });
     this.drawLine();
