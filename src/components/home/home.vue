@@ -1,6 +1,8 @@
 <template>
   <el-container class="container">
-    <Aside></Aside>
+    <el-scrollbar :style="{height:'100%'}">
+      <Aside></Aside>
+    </el-scrollbar>
     <el-container class="container">
       <el-header height>
         <Header :post="post"></Header>

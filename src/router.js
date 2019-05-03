@@ -49,6 +49,14 @@ var router = new Router({
           name: 'userlist',
           component: () => import( /* webpackChunkName: "404" */ './components/user/userlist.vue')
         },{
+          path: '/user/administrators',
+          name: 'administrators',
+          component: () => import( /* webpackChunkName: "404" */ './components/user/administrators.vue')
+        },{
+          path: '/user/roidManager',
+          name: 'roidManager',
+          component: () => import( /* webpackChunkName: "404" */ './components/user/roidManager.vue')
+        },{
           path: '/readme',
           name: 'readme',
           component: () => import( /* webpackChunkName: "404" */ './components/readme/readme.vue')
