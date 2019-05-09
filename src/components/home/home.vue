@@ -1,13 +1,14 @@
 <template>
   <el-container class="container">
-    <el-scrollbar :style="{height:'100%'}">
+    <!-- height设置102抵消el-scrollbar超出部分 -->
+    <el-scrollbar :style="{height:'102%'}">
       <Aside></Aside>
     </el-scrollbar>
     <el-container class="container">
       <el-header height>
         <Header :post="post"></Header>
       </el-header>
-      <el-scrollbar :style="{height:'95%'}">
+      <el-scrollbar :style="{height:'98%'}">
         <keep-alive>
           <router-view></router-view>
         </keep-alive>

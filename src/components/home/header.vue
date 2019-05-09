@@ -10,6 +10,9 @@
       <!-- <i class="el-icon-location-outline"></i> -->
       <!-- <i class="fas fa-home"></i> -->
       <i class="fas fa-globe"></i>
+      <!-- <el-button type="text" @click="$router.push({name:'homepage1'})">
+        <i class="fas fa-globe"></i>
+      </el-button> -->
     </el-menu-item>
     <el-menu-item index="2-2" title="刷新">
       <i class="fas fa-redo"></i>

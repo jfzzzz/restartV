@@ -35,9 +35,9 @@
                   <i class="fa fa-cubes fa-3x"></i>
                   <br>
                   <br>
-                  <span>弹层</span>
+                  <span>应用</span>
                 </el-button>
-                <el-button type="info" plain @click="$router.push({name:'homepage1'})">
+                <el-button type="info" plain @click="$router.push({name:'map'})">
                   <i class="fas fa-chart-pie fa-3x"></i>
                   <br>
                   <br>
@@ -45,7 +45,7 @@
                 </el-button>
               </div>
               <div class="block">
-                <el-button type="info" plain @click="$router.push({name:'homepage1'})">
+                <el-button type="info" plain @click="$router.push({name:'userlist'})">
                   <!-- <i class="fab fa-first-order-alt fa-3x"></i> -->
                   <i class="fa fa-user fa-3x" aria-hidden="true"></i>
                   <br>
@@ -64,7 +64,7 @@
                   <br>
                   <span>技术栈</span>
                 </el-button>
-                <el-button type="info" plain @click="$router.push({name:'homepage1'})">
+                <el-button type="info" plain @click="$router.push({name:'website'})">
                   <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
                   <br>
                   <br>

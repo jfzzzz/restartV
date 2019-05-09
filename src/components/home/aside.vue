@@ -167,6 +167,7 @@ not supported by any browser */
   /* overflow-x: hidden; */
   /* overflow-y: scroll; */
   height: 100%;
+
   /* width: 100%; */
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {

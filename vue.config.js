@@ -13,6 +13,7 @@
 // }
 module.exports = {
   // publicPath:'/restartV/',
+  // publicPath:'./',
   // devServer: {
   //   contentBase: __dirname + "/",
   //   proxy: {

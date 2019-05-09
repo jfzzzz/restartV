@@ -10,19 +10,20 @@ import './assets/css/style.css'
 import animate from 'animate.css'
 // 引入字体图标
 import '@fortawesome/fontawesome-free/css/all.min.css'
+// moment时间格式化插件
 import moment from 'moment'
 import 'moment/locale/zh-cn'
 // echarts引入
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts 
 // markdown编辑
-import mavonEditor from 'mavon-editor'
+// import mavonEditor from 'mavon-editor'
 // markdown-it对象：md.s_markdown, md => mavonEditor实例
 //                 or
 //                 mavonEditor.markdownIt 
-import 'mavon-editor/dist/css/index.css'
+// import 'mavon-editor/dist/css/index.css'
 // use
-Vue.use(mavonEditor)
+// Vue.use(mavonEditor)
 Vue.use(animate)
 Vue.use(Vuex)
 Vue.filter("dateFilter", function(date, formatPattern){  

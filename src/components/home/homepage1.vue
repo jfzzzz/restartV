@@ -286,6 +286,7 @@ export default {
 .block {
   display: -webkit-flex; /* Safari */
   display: flex;
+  width: 100%;
   justify-content: space-around;
   margin: 5px 0;
 }
