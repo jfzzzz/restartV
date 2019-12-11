@@ -10,8 +10,9 @@
       </el-header>
       <el-scrollbar :style="{height:'98%'}">
         <keep-alive>
-          <router-view></router-view>
+          <router-view v-if="$route.meta.keepAlive"></router-view>
         </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive"></router-view>
       </el-scrollbar>
     </el-container>
   </el-container>

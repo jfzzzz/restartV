@@ -20,27 +20,27 @@
               <div class="block">
                 <el-button type="info" plain @click="$router.push({name:'homepage1'})">
                   <i class="fab fa-first-order-alt fa-3x"></i>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <span>主页一</span>
                 </el-button>
                 <el-button type="info" plain @click="$router.push({name:'homepage2'})">
                   <!-- <i class="fas fa-signature fa-2x"></i> -->
                   <i class="fa fa-heartbeat fa-3x"></i>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <span>主页二</span>
                 </el-button>
                 <el-button type="info" plain @click="$router.push({name:'homepage2'})">
                   <i class="fa fa-cubes fa-3x"></i>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <span>应用</span>
                 </el-button>
                 <el-button type="info" plain @click="$router.push({name:'map'})">
                   <i class="fas fa-chart-pie fa-3x"></i>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <span>图表</span>
                 </el-button>
               </div>
@@ -48,26 +48,26 @@
                 <el-button type="info" plain @click="$router.push({name:'userlist'})">
                   <!-- <i class="fab fa-first-order-alt fa-3x"></i> -->
                   <i class="fa fa-user fa-3x" aria-hidden="true"></i>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <span>用户</span>
                 </el-button>
                 <el-button type="info" plain @click="$router.push({name:'homepage1'})">
                   <i class="fab fa-node-js fa-3x"></i>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <span>高级</span>
                 </el-button>
                 <el-button type="info" plain @click="$router.push({name:'technology'})">
                   <i class="fab fa-github fa-3x"></i>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <span>技术栈</span>
                 </el-button>
                 <el-button type="info" plain @click="$router.push({name:'website'})">
                   <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <span>设置</span>
                 </el-button>
               </div>
@@ -180,9 +180,9 @@
               </div>
             </div>
             <div class="block">
-              <el-progress type="circle" :percentage="25" status="text">开发进展</el-progress>
-              <el-progress type="circle" :percentage="80" color="red" status="text">加班上限</el-progress>
-              <el-progress type="circle" :percentage="20" color="#12CE66" status="text">剩余调休</el-progress>
+              <el-progress type="circle" :percentage="25">开发进展</el-progress>
+              <el-progress type="circle" :percentage="80" color="red">加班上限</el-progress>
+              <el-progress type="circle" :percentage="20" color="#12CE66">剩余调休</el-progress>
             </div>
           </el-card>
         </el-col>
@@ -192,35 +192,9 @@
           <el-card :style="{ margin:'10px' }">
             <el-tabs value="first" @tab-click="handleClick">
               <el-tab-pane label="文章管理" name="first">
-                <el-table :data="tableData" style="width: 100%">
-                  <el-table-column type="index" width="50"></el-table-column>
-                  <el-table-column prop="branch" label="分类" width="150"></el-table-column>
-                  <el-table-column prop="title" label="标题"></el-table-column>
-                  <el-table-column prop="date" label="日期" width="180"></el-table-column>
-                  <el-table-column label="操作" width="180">
-                    <template slot-scope="scope">
-                      <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">查看</el-button>
-                      <el-button
-                        size="mini"
-                        type="danger"
-                        @click="handleDelete(scope.$index, scope.row)"
-                      >删除</el-button>
-                    </template>
-                  </el-table-column>
-                </el-table>
-                <el-pagination
-                  :style="{margin:'10px 0'}"
-                  background
-                  layout="prev, pager, next"
-                  :total="pages.total"
-                  @current-change="getContextFile"
-                  :current-page="pages.currentPage"
-                  :page-size="pages.size"
-                ></el-pagination>
+                <simpleCssList></simpleCssList>
               </el-tab-pane>
-              <el-tab-pane label="配置管理" name="second">
-                <div v-html="compiledMarkdown" class="markdown-body"></div>
-              </el-tab-pane>
+              <el-tab-pane label="配置管理" name="second"></el-tab-pane>
               <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
               <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
             </el-tabs>
@@ -241,7 +215,6 @@
               <p>(7)功能逐步增加</p>
             </div>
           </el-card>
-          
         </el-col>
       </el-row>
     </div>
@@ -252,7 +225,9 @@
 import marked from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/github.css";
+import simpleCssList from "../simple-css/simpleCssList";
 export default {
+  components: { simpleCssList },
   data() {
     return {
       msg: "",
@@ -260,9 +235,9 @@ export default {
       activeName: "second",
       tableData: [],
       pages: {
-        currentPage: 1,      // 当前页index
-        size: 10,            // 每页显示多少条
-        total: 50            // 数据总条数
+        currentPage: 1, // 当前页index
+        size: 10, // 每页显示多少条
+        total: 50 // 数据总条数
       }
     };
   },
@@ -273,7 +248,7 @@ export default {
   },
   computed: {
     compiledMarkdown: function() {
-      return marked(this.msg, { sanitize: true });
+      return marked(this.msg);
     }
   },
   mounted() {
@@ -286,7 +261,7 @@ export default {
       tables: true,
       breaks: false,
       pedantic: false,
-      sanitize: false,
+      // sanitize: false,
       smartLists: true,
       smartypants: false
     });

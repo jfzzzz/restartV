@@ -49,15 +49,16 @@
             @selection-change="handleSelectionChange"
           >
             <el-table-column type="selection" width="55"></el-table-column>
+            <el-table-column prop="name" label="用户名" width="200"></el-table-column>
             <el-table-column prop="id" label="ID" width="55"></el-table-column>
-            <el-table-column prop="username" label="用户名" width="200"></el-table-column>
-            <el-table-column prop="phoneNum" label="手机号" width="200"></el-table-column>
-            <el-table-column prop="email" label="邮箱" width="200"></el-table-column>
-            <el-table-column label="性别" width="80">
-              <template slot-scope="scope">{{ scope.row.sex ==1?'男':'女' }}</template>
+            <el-table-column prop="_id" label="_ID" show-overflow-tooltip width="120"></el-table-column>
+            <el-table-column prop="phone" label="手机号" width="150"></el-table-column>
+            <el-table-column prop="type" label="类型" width="200">
+              <template slot-scope="scope">{{ scope.row.type == 0 ?'博主':'其他用户' }}</template>
             </el-table-column>
-            <el-table-column prop="ip" label="IP" width="200"></el-table-column>
-            <el-table-column prop="joindate" label="加入时间" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="create_time" label="加入时间" show-overflow-tooltip>
+              <template slot-scope="scope">{{ scope.row.create_time | dateFilterSmall}}</template>
+            </el-table-column>
             <el-table-column label="操作">
               <template slot-scope="scope">
                 <el-button
@@ -109,29 +110,36 @@
       </div>
     </el-dialog>
     <el-dialog title="编辑用户" :visible.sync="dialogEidtVisible">
-      <el-form :model="editUserInfo" class="dialogForm">
+      <el-form :model="editUserInfo" class="dialogForm" :rules="rules" ref="editUserInfo">
         <el-form-item label="用户名" :label-width="formLabelWidth">
-          <el-input v-model="editUserInfo.username" autocomplete="off" style="width:60%"></el-input>
+          <el-input v-model="editUserInfo.name" autocomplete="off" style="width:60%" readonly></el-input>
         </el-form-item>
         <el-form-item label="手机号码" :label-width="formLabelWidth">
-          <el-input v-model="editUserInfo.phoneNum" autocomplete="off" style="width:60%"></el-input>
+          <el-input v-model="editUserInfo.phone" autocomplete="off" style="width:60%"></el-input>
         </el-form-item>
         <el-form-item label="邮箱" :label-width="formLabelWidth">
           <el-input v-model="editUserInfo.email" autocomplete="off" style="width:60%"></el-input>
         </el-form-item>
-        <el-form-item label="头像" :label-width="formLabelWidth">
-          <el-input v-model="editUserInfo.pic" style="width:60%"></el-input>
+        <el-form-item label="更新密码" prop="password" :label-width="formLabelWidth">
+          <el-input
+            type="password"
+            v-model="editUserInfo.password"
+            autocomplete="off"
+            style="width:60%"
+          ></el-input>
         </el-form-item>
-        <el-form-item label="选择性别" :label-width="formLabelWidth">
-          <el-radio-group v-model="editUserInfo.sex">
-            <el-radio label="1">男</el-radio>
-            <el-radio label="0">女</el-radio>
-          </el-radio-group>
+        <el-form-item label="确认密码" prop="checkPass" :label-width="formLabelWidth">
+          <el-input
+            type="password"
+            v-model="editUserInfo.checkPass"
+            autocomplete="off"
+            style="width:60%"
+          ></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogEidtVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogEidtVisible = false">确 定</el-button>
+        <el-button type="primary" @click="editDialogEidt">确 定</el-button>
       </div>
     </el-dialog>
   </div>
@@ -140,13 +148,28 @@
 <script>
 export default {
   created() {
-    this.$http.get("/user/userlist.json").then(res => {
-      this.tableData = res.data.data;
-      this.pageInfo.count = res.data.count;
-      // console.log(res.data.count)
-    });
+    this.reloadList();
   },
   data() {
+    var validatePass = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请输入密码"));
+      } else {
+        if (this.editUserInfo.checkPass !== "") {
+          this.$refs.editUserInfo.validateField("checkPass");
+        }
+        callback();
+      }
+    };
+    var validatePass2 = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请再次输入密码"));
+      } else if (value !== this.editUserInfo.password) {
+        callback(new Error("两次输入密码不一致!"));
+      } else {
+        callback();
+      }
+    };
     return {
       dialogFormVisible: false,
       dialogEidtVisible: false,
@@ -168,20 +191,29 @@ export default {
       // 复选框 存储
       multipleSelection: [],
       editUserInfo: {
-        username: "",
-        phoneNum: "",
+        name: "",
+        phone: "",
         email: "",
-        pic: "",
-        sax: ""
+        password: "",
+        checkPass: ""
       },
       pageInfo: {
         count: 0,
         limit: "",
         index: ""
+      },
+      rules: {
+        password: [{ validator: validatePass, trigger: "blur" }],
+        checkPass: [{ validator: validatePass2, trigger: "blur" }]
       }
     };
   },
   methods: {
+    reloadList() {
+      this.$http.get("/userList").then(res => {
+        this.tableData = res.data.data;
+      });
+    },
     onSubmit() {
       console.log("submit!");
     },
@@ -198,16 +230,35 @@ export default {
     },
     handleDel() {},
     handleEdit(index, row) {
+      console.log(row);
       // this.$message(scopeRow);
       this.dialogEidtVisible = true;
       // this.editUserInfo = scopeRow;
       this.editUserInfo = Object.assign({}, row);
-
+      this.editUserInfo.password = "";
     },
     handleDelete() {},
     changePage(index) {
       console.log(index);
       this.pageInfo.index = index;
+    },
+    async editDialogEidt() {
+      this.dialogEidtVisible = false;
+      this.editUserInfo.id = this.editUserInfo._id;
+      await this.$http
+        .post("/upDateUser", this.editUserInfo)
+        .then(res => {
+          let data = res.data;
+          if (data.code == 0) {
+            this.$message.success(data.message);
+            this.reloadList();
+          } else {
+            this.$message.error(data.message);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };

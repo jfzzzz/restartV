@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Author: zhengtiancai
+ * @Github: https://github.com/jfzzzz
+ * @Date: 2019-05-09 07:02:16
+ * @LastEditors: 
+ * @LastEditTime: 2019-08-26 10:52:33
+ -->
 <template>
   <el-menu
     :default-active="$route.path"
@@ -36,18 +44,23 @@
         <span slot="title">应 用（待开发）</span>
       </template>
       <el-menu-item-group>
-        <el-submenu index="/system">
+        <el-submenu index="/article">
           <template slot="title">内容系统</template>
-          <el-menu-item index="/setting/website">文章列表</el-menu-item>
-          <el-menu-item index="/setting/email">分类管理</el-menu-item>
-          <el-menu-item index="/setting/email1">评论管理</el-menu-item>
+          <el-menu-item index="/article/addArticle">文章添加</el-menu-item>
+          <el-menu-item index="/article/articleList">文章列表</el-menu-item>
+          <el-menu-item index="/article/editport">文章修改</el-menu-item>
         </el-submenu>
-        <el-submenu index="/our">
-          <template slot="title">社区系统</template>
-          <el-menu-item index="/setting/userinfo">帖子列表</el-menu-item>
+        <el-submenu index="/tags">
+          <template slot="title">标签</template>
+          <el-menu-item index="/tags/addTag">添加标签</el-menu-item>
           <el-menu-item index="/setting/changepwd">回帖列表</el-menu-item>
         </el-submenu>
-        <el-menu-item index="/setting/userinfo">消息中心</el-menu-item>
+        <el-submenu index="/category">
+          <template slot="title">分类</template>
+          <el-menu-item index="/category/addCategory">添加分类</el-menu-item>
+          <el-menu-item index="/category/getCategoryList">分类列表</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="/article/comment">评论系统</el-menu-item>
         <el-menu-item index="/setting/changepwd">工单系统</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
