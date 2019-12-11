@@ -1,38 +1,35 @@
 # Vue
 
 > 缓慢开发ing。
-> > 已经挂载上线，功能依然在逐渐上线img
-> >
-> > [跳->](https://jfzzzz.github.io/restartV/index.html)
 
 + 主页布局(✔️)
 + 技术栈markdown排列布局展示(✔️)
-+ 待续。。
++ 博文列表展示(✔️)
++ 博文增删改查(✔️)
++ 评论系统(✔️)
++ 标签(✔️)
++ 分类(✔️)
++ 用户管理
+  + 用户信息(✔️)
+  + 头像列表可选
+  + 用户评论
+  + 用户权限
++ 权限管理
++ 站长流量监控
++ 数据可视化管理
 
-## 项目初始化包加载
-```
-npm install
-```
+---
 
-### 开发环境编译热重载
-```
-npm run serve
-```
+电脑十月份出现事故，重装了系统，导致博客的前端页面代码丢失一大部分
 
-### 生产环境编译
-```
-npm run build
-```
+这个后台也暂停好久
 
-### Run your tests
-```
-npm run test
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+习惯性挖坑不填
+
+溜了溜了。。。
+
+
