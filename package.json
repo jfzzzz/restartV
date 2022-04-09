@@ -16,7 +16,7 @@
     "highlight.js": "^9.15.6",
     "marked": "^0.7.0",
     "mavon-editor": "^2.7.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.6",
     "vue-json-excel": "^0.2.98",
